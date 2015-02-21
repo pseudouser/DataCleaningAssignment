@@ -1,0 +1,33 @@
+Features captured and naming:
+
+All accelerometer and gyroscope time domain signals were captured at a constant rate of 50 Hz across 3 axes – “X”, “Y” and “Z”. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. These signals were then separated into “body” and “gravity” acceleration signals using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain “jerk” signals. 
+A Fast Fourier Transform (FFT) was applied to some of the base signals.
+
+Feature naming [in order of appearance in feature name]
+angle: Angle between two vectors.
+prefix t/f: denotes whether the signals are time signals or whether they indicate frequency domain signals (which were derived by applying an FFT to the base signals)
+Body/Gravity – indicates whether the signals were separated into Body or Gravity acceleration signals
+Acc/Gyro – indicates whether the signals were obtained from the Accelerometer or Gyroscope
+Jerk – indicates the Jerk signals derived in time from the body linear acceleration and angular velocity 
+Mag – indicates the Magnitude of these three-dimensional signals calculated using the Euclidean norm
+
+mean/std/mad/max/min/sma/energy/iqr/entropy/arCoeff/maxInds/meanFreq/skewness/kurtosis/bandsEnergy – indicates which function was applied to the signals obtained
+mean: Mean value
+std: Standard deviation
+mad: Median absolute deviation 
+max: Largest value in array
+min: Smallest value in array
+sma: Signal magnitude area
+energy: Energy measure; calculated as sum of the squares divided by the number of values. 
+iqr: Interquartile range 
+entropy: Signal entropy
+arCoeff: Autorregresion coefficients with Burg order equal to 4
+correlation: correlation coefficient between two signals
+maxInds: index of the frequency component with largest magnitude
+meanFreq: Weighted average of the frequency components to obtain a mean frequency
+skewness: skewness of the frequency domain signal 
+kurtosis: kurtosis of the frequency domain signal 
+bandsEnergy: Energy of a frequency interval within the 64 bins of the FFT of each window.
+
+X/Y/Z – indicates which axis the signals measured pertained to – X, Y or Z
